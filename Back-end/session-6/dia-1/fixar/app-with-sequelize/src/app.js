@@ -2,7 +2,7 @@
 
 const express = require('express');
 
-const User = require('./controllers/user.controller');
+const User = require('./controlers/user.controller');
 
 const app = express();
 

@@ -25,6 +25,11 @@ exports.triangle = triangle;
 function square(side) {
     return side ** 2;
 }
+exports.losango  = losango;
+function losango(diagmaior,diagmenor) {
+    return (diagmaior*diagmenor)/2;
+}
+
 exports.square = square;
 function rectangle(base, height) {
     return base * height;

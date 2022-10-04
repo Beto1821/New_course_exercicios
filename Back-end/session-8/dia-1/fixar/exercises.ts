@@ -27,3 +27,7 @@ export function square(side: number): number {
 export function rectangle(base: number, height: number): number {
   return base * height;
 }
+
+export function losango(diagmaior: number, diagmenor: number): number {
+  return (diagmaior * diagmenor)/2;
+}

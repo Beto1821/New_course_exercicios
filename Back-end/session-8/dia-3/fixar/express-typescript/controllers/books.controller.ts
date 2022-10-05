@@ -46,6 +46,5 @@ class BooksController {
     res.status(StatusCodes.OK).json({ message: 'Book deleted successfully' });
   };
 }
-}
 
 export default BooksController;

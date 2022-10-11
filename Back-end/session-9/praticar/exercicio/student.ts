@@ -2,14 +2,14 @@
 class Student {
   private _enrollment: string;
   private _name: string;
-  private _examsGrades: number[];
-  private _worksGrades: number[];
+  private _examsGrades: number[] =Array();
+  private _worksGrades: number[] = Array();
 
   constructor(enrollment: string, name: string, exams: number[], grades: number[]) {
     this._enrollment = enrollment;
     this._name = name;
-    this._examsGrades = exams;
-    this._worksGrades = grades;
+    this.examsGrades = exams;
+    this.worksGrades = grades;
   }
 
   get enrollment(): string {
@@ -37,7 +37,7 @@ class Student {
   }
 
   set examsGrades(value: number[]) {
-    if (value.length > 4) {
+    if (value.length !== 4) {
       throw new Error('A pessoa estudante só pode possuir 4 notas de provas.');
     }
 
@@ -57,15 +57,26 @@ class Student {
 
     this._worksGrades = value;
   }
+
+  sumGrades():number {
+    return [...this.examsGrades, ...this.worksGrades]
+    .reduce((prevGrade, grade) => {
+      grade += prevGrade;
+      return grade;
+    }, 0);
+  }
 }
 
 // Para testar!
 
-const personOne = new Student('202001011', 'Maria da Silva', [5,6,7,8], [6,7,8]);
+const student1 = new Student('202001011', 'Maria da Silva', [5,6,7,3], [6,7]);
 
-console.log(personOne);
+console.log(student1);
+console.log('Soma das notas ', student1.sumGrades());
 
-const personTwo = new Student('202001012', 'João da Silva', [5, 1, 7, 8], [9, 7, 8]);
 
-console.log(personTwo);
+const student2 = new Student('202001012', 'João da Silva', [5, 1, 7, 8], [9, 7]);
+
+console.log(student2);
+console.log('Soma das notas ', student2.sumGrades());
 

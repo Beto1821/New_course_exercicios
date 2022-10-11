@@ -61,11 +61,11 @@ class Student {
 
 // Para testar!
 
-const personOne = new Student('202001011', 'Maria da Silva');
+const personOne = new Student('202001011', 'Maria da Silva', [5,6,7,8], [6,7,8]);
 
 console.log(personOne);
 
-const personTwo = new Student('202001012', 'João da Silva');
+const personTwo = new Student('202001012', 'João da Silva', [5, 1, 7, 8], [9, 7, 8]);
 
 console.log(personTwo);
 

@@ -16,4 +16,6 @@ docker container exec -it day-1 bash
 mongoexport --jsonArray --db ex01-dia01-bios --type=json --collection bios --out file-json/bios.json
 
 mongoimport --jsonArray --db ex01-dia01-bios --collection bios file-json/bios.json
+
+mongoimport --jsonArray --db class --collection books file-json/books.json 
 ```
